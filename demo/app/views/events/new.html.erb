@@ -1,9 +1,5 @@
 <%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f|  %>
-<%= f.label :name, "Name:" %>
-<%= f.text_field :name %>
+<%= render :partial => 'form', :locals => { :f => f } %>
 </br></br>
-<%= f.label :description, "Description:" %>
-<%= f.text_area :description %>
-</br></br>
-<%= f.submit "Create" %>
+<%= f.submit "Create" %> <%= link_to 'Back to index', :controller => 'events', :action => 'index' %>
 <% end %>
